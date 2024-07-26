@@ -1,6 +1,8 @@
 package org.northcoders;
 
-public class Box<T, V> {
+import java.util.ArrayList;
+
+public class Box<T, V extends Number & Comparable<V> > {
 
     private T number;
     private String name;
@@ -14,14 +16,16 @@ public class Box<T, V> {
         return largestValue;
     }
 
-    public void setLargestValue(V <? extends Number> firstValue, V <? extends Number>secondValue) {
-        Number largest = (Number) firstValue;
-        Number newSecond = (Number) secondValue;
-        if(newSecond > largest){
-            largest = (Number) secondValue;
+
+
+    public void setLargestValue(V value1, V value2){
+        if (value1.compareTo(value2) > 0) {
+            largestValue = value1;
+        } else {
+            largestValue =  value2;
         }
-        this.largestValue = (V) largest;
-      }
+    }
+
 
     public String getName() {
         return name;
