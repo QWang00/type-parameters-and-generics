@@ -2,22 +2,24 @@ package org.northcoders;
 
 import java.util.ArrayList;
 
-public class Box<T, V extends Number & Comparable<V> > {
+public class Box<T, V extends Number & Comparable<V>> implements BoxOperations<V> {
 
     private T number;
     private String name;
     private V largestValue;
 
+
     public Box(String name) {
         this.name = name;
     }
 
+    @Override
     public V getLargestValue() {
         return largestValue;
     }
+    
 
-
-
+    @Override
     public void setLargestValue(V value1, V value2){
         if (value1.compareTo(value2) > 0) {
             largestValue = value1;
@@ -25,7 +27,6 @@ public class Box<T, V extends Number & Comparable<V> > {
             largestValue =  value2;
         }
     }
-
 
     public String getName() {
         return name;
