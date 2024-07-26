@@ -1,13 +1,14 @@
 package org.northcoders;
 
 
-
+import java.util.ArrayList;
+import java.util.List;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        Box<String, Integer> box1 = new Box<>("Str");
+        Box<String, Double> box1 = new Box<>("Str");
         Box<Number, Double> box2 = new Box<>("Num");
         Box<Integer, Float> box22 = new Box<>("Int");
         Box<Double, Short> box23 = new Box<>("Num");
@@ -21,7 +22,11 @@ public class Main {
 
 
         //ArrayList<Integer> nums = {1,2,3};
-        box1.castValue(5);
+        List<Float> someList = new ArrayList<>();
+        someList.add(5.2f);
+        someList.add(10.1f);
+        box22.setLargestValueFromList(someList);
+
 
 
 

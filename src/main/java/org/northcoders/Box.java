@@ -1,6 +1,8 @@
 package org.northcoders;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 public class Box<T, V extends Number & Comparable<V>> implements BoxOperations<V> {
 
@@ -8,6 +10,11 @@ public class Box<T, V extends Number & Comparable<V>> implements BoxOperations<V
     private String name;
     private V largestValue;
 
+    @Override
+    public void setLargestValueFromList(List<V> numbers) {
+        largestValue = Collections.max(numbers);
+        System.out.println(largestValue);
+    }
 
     public Box(String name) {
         this.name = name;
